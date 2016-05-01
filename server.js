@@ -28,8 +28,9 @@ app.use(express.static(__dirname + "/views"));
 
 // START SERVER
 // ===========================================================================
-app.listen(process.env.PORT || 7000);
-console.log("Express server listening on port " + app.get("port"));
+var port=process.env.PORT || 7000
+app.listen(port);
+console.log("Express server listening on port " + port);
 
 // ROUTES FOR OUR API
 // =====================================================================
