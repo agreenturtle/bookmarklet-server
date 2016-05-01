@@ -28,8 +28,7 @@ app.use(express.static(__dirname + "/views"));
 
 // START SERVER
 // ===========================================================================
-var port = Number(7000);
-app.listen(port);
+app.listen(7000);
 console.log("Express server listening on port " + app.get("port"));
 
 // ROUTES FOR OUR API
