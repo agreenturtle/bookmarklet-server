@@ -1,0 +1,40 @@
+<html>
+  <head>
+    {{>templates/header}}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        {{>templates/navbar}}
+
+        <a href="/admin/users/new" class="btn btn-default"> Add New User </a>
+
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th> Username </th>
+              <th> Permission </th>
+              <th> </th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#all_users}}
+              <tr>
+                <td><a href="/admin/users/{{id}}"><div name="cell">{{username}}</div></a></td>
+                <td><a href="/admin/users/{{id}}"><div name="cell">{{permission}}</div></a></td>
+                <td><a href="/admin/users/{{id}}" class="btn btn-warning btn-sm"><div name="cell"> Edit </div></a></td>
+                <td>
+                  <form action="/admin/users/{{id}}?_method=delete" method="post">
+                    <button type="submit" class="btn btn-danger"> Delete </button>
+                  </form>
+                </td>
+              </tr>
+            {{/all_users}}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -5,11 +5,11 @@ var models = require("./models");
 module.exports = function(router){
   // middleware to use for all requests
   router.use(function(req, res, next) {
-    console.log("router: req.url : ",req.url);
-    console.log("user_id: ", req.session.user_id);
+    console.log(req.url);
     if(req.url != "/"){
       models.User.findById(req.session.user_id).then(function(user){
         if(user){
+          console.log("assign user to req.user");
           req.user = user;
           next();
         }
@@ -17,13 +17,18 @@ module.exports = function(router){
           res.render("index/401");
       });
     }
-    next();
+    else{
+      next();
+    }
   });
 
   // ROUTE: "/"
   require("./controller/index.js")(router);
-
   // ROUTE: "/admin"
   require("./controller/admin.js")(router);
+  // Route: "/admin/users"
+  require("./controller/users.js")(router);
+
+
   return router;
 }

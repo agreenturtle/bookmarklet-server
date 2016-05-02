@@ -5,7 +5,14 @@ var User = function(sequelize, DataTypes){
     permission: {type: DataTypes.STRING}
   },
   {
-      //instanceMethods
+    instanceMethods:{
+      isAdmin: function(){
+        if(this.permission == "admin")
+          return true;
+        else
+          return null;
+      }
+    }
   });
 }
 
