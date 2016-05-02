@@ -30,7 +30,7 @@ User.sync({force: true}).then(function () {
   return User.create({
     username: 'admin',
     password: 'letmein',
-    permission: 'admin'
+    permission: 'Admin'
   });
 });
 

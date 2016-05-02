@@ -7,13 +7,13 @@ var User = function(sequelize, DataTypes){
   {
     instanceMethods:{
       isAdmin: function(){
-        if(this.permission == "admin")
+        if(this.permission == "Admin")
           return true;
         else
           return null;
       },
       isGuest: function(){
-        if(this.permission == "guest")
+        if(this.permission == "Guest")
           return true;
         else
           return null;

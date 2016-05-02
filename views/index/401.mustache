@@ -6,8 +6,11 @@
     <div class="wrapper">
       <div class="container">
         {{>templates/navbar}}
-        <h3> Sorry you do not have access to this page </h3>
-        <a class="btn btn-primary" href="/"> Back </a>
+        <div class="jumbotron">
+          <h2> Error: Access Denied </h2>
+          <p> Incorrect username and/or password entered. Please sign in to gain access to the Bookmarklet Admin Tool </p>
+          <p><a class="btn btn-primary btn-lg" href="/"> Sign In </a> </p>
+        </div>
       </div>
     </div>
   </body>

@@ -5,11 +5,21 @@
   <body>
         {{>templates/navbar}}
         <div class="left-panel">
-          <p> Welcome to the Bookmarklet Tool Admin Section. Here you can add or modify users and the mappings the bookmarklet tool uses to scrape information off the page. </p>
+
+          <h3> Welcome to the Bookmarklet Tool Admin Section </h3>
+          <p>
+            The Bookmarklet Tool will allow you to select an item on a page, and it will return to you
+            the JavaScript code to pull that DOM element off the page. You are only allowed to pull
+            specified "types" off a page, such as a Product Name or Product Image.
+          </p>
+          <ul>
+            <li>To modify the mappings for the type of mapping, please see the "Mappings" section.</li>
+            <li>To modify the users who can access this tool, please see the "Users" section.</li>
+          </ul>
         </div>
         <div class="right-panel">
-          <a href="/admins/users" class="btn btn-default"> Edit Users </a>
-          <a href="/admins/mappings" class="btn btn-default"> Edit Mappings </a>
+          <a href="/admin/users" class="btn btn-primary"> Edit Users </a>
+          <a href="/admin/mappings" class="btn btn-primary"> Edit Mappings </a>
         </div>
   </body>
 </html>
