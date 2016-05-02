@@ -5,8 +5,10 @@ var models = require("./models");
 module.exports = function(router){
   // middleware to use for all requests
   router.use(function(req, res, next) {
+    console.log("router: req.url : ",req.url);
+    console.log(req.session.user);
     if(req.url != "/"){
-      models.User.findById(req.session.user_id).then(function(user){
+      models.User.findById(req.session.user).then(function(user){
         if(user){
           req.user = user;
           next();
@@ -16,6 +18,7 @@ module.exports = function(router){
         }
       });
     }
+    next();
   });
 
   // ROUTE: "/"

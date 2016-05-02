@@ -20,10 +20,18 @@ Mapping.sync({force: true}).then(function () {
   return;
 });
 
+User.sync({force: true}).then(function () {
+  // Table created
+  return User.create({
+    username: 'admin',
+    password: 'letmein',
+    permission: 'admin'    
+  });
+});
+
 db["Mapping"] = Mapping;
 db["User"] = User;
 // ===========================================================================
 
 db.dbConn = bookmarkletDB;
-
 module.exports = db;

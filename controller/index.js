@@ -10,6 +10,8 @@ var Index = function(router){
     })
 
     .post(function(req,res) {
+      console.log(req.body.username);
+      console.log(req.body.password);
       models.User.findOne( {where:{username: req.body.username} }).then(function(user){
         if( user.password == req.body.password){
           req.session.user_id = user.id;
