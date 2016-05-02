@@ -9,7 +9,12 @@ console.log("DB: ", process.env.BOOKMARKLET_DB,",Username: ", process.env.BOOKMA
 var bookmarkletDB = new Sequelize(process.env.BOOKMARKLET_DB, process.env.BOOKMARKLET_DB_USERNAME, process.env.BOOKMARKLET_DB_PASSWORD, {
   dialect: "mysql",
   host: process.env.BOOKMARKLET_HOST,
-  port: 3306
+  port: 3306,
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  }
 });
 
 var Mapping = bookmarkletDB.import(__dirname + "/mapping");
@@ -25,7 +30,7 @@ User.sync({force: true}).then(function () {
   return User.create({
     username: 'admin',
     password: 'letmein',
-    permission: 'admin'    
+    permission: 'admin'
   });
 });
 

@@ -13,7 +13,8 @@ var Index = function(router){
       console.log(req.body.username);
       console.log(req.body.password);
       models.User.findOne( {where:{username: req.body.username} }).then(function(user){
-        if( user.password == req.body.password){
+        if( user && user.password == req.body.password){
+          console.log("---", user.id);
           req.session.user_id = user.id;
           res.render("admin/index");
         }
