@@ -25,6 +25,10 @@ app.use(bodyParser.urlencoded( {extended:true} ));
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/views"));
 
+// PASSWORDS
+// =====================================================================
+var SESSION_SECRET=process.env.SESSION_SECRET.toString();
+app.use(expressSession( {secret:SESSION_SECRET, resave:true, saveUninitialized: true} ));
 
 // START SERVER
 // ===========================================================================

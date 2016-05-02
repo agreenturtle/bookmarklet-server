@@ -12,6 +12,7 @@
     "express-session": "1.11.2",
     "method-override": "2.3.3",
     "mustache-express": "1.2.1",
+    "mysql": "^2.10.2",
     "sequelize": "^3.22.0"
   },
   "engines": {

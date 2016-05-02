@@ -1,5 +1,5 @@
 var User = function(sequelize, DataTypes){
-  return sequelize.define("User", {
+  return sequelize.define("Users", {
     username: {type: DataTypes.STRING},
     password: {type: DataTypes.STRING},
     permission: {type: DataTypes.STRING}
@@ -8,14 +8,5 @@ var User = function(sequelize, DataTypes){
       //instanceMethods
   });
 }
-
-User.sync({force: true}).then(function () {
-  // Table created
-  return User.create({
-    username: "admin",
-    password: process.env.ADMIN_PASSWORD,
-    permission: "admin"
-  });
-});
 
 module.exports = User;
