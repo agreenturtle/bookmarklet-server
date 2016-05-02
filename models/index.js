@@ -34,8 +34,8 @@ User.sync({force: true}).then(function () {
   });
 });
 
-db["Mapping"] = Mapping;
-db["User"] = User;
+db["Mappings"] = Mapping;
+db["Users"] = User;
 // ===========================================================================
 
 db.dbConn = bookmarkletDB;

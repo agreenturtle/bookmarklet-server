@@ -17,7 +17,7 @@ module.exports = function(router){
     })
 
     .post(function(req,res) {
-      models.User.findOne( {where:{username: req.body.username} }).then(function(user){
+      models.Users.findOne( {where:{username: req.body.username} }).then(function(user){
         if( user && user.password == req.body.password){
           req.session.user_id = user.id;
           res.redirect("/admin");
@@ -26,5 +26,6 @@ module.exports = function(router){
           res.render("index/401");
         }
       })
+
     })
 }

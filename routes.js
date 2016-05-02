@@ -7,7 +7,7 @@ module.exports = function(router){
   router.use(function(req, res, next) {
     console.log(req.url);
     if(req.url != "/"){
-      models.User.findById(req.session.user_id).then(function(user){
+      models.Users.findById(req.session.user_id).then(function(user){
         if(user){
           console.log("assign user to req.user");
           req.user = user;

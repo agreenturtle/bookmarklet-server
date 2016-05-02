@@ -1,4 +1,4 @@
-// controller/index.js
+// controller/admin.js
 // ROUTE = "/admin"
 // =====================================================================
 

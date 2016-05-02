@@ -10,7 +10,7 @@
         {{#duplicate}}
           <div class="alert alert-danger" role="alert"> Username has been taken, please try a different username </div>
         {{/duplicate}}
-        <form class="form col-sm-12" action="/admin/users/?_method=put" method="post">
+        <form class="form col-sm-12" action="/admin/users/{{#user_data}}{{id}}{{/user_data}}?_method=put" method="post">
           <div class="form-group">
             <label> Username </label>
             <input class="form-control" disabled name="username" value="{{#user_data}}{{username}}{{/user_data}}" />
