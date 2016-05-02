@@ -1,0 +1,40 @@
+<html>
+  <head>
+    {{>templates/header}}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        {{>templates/navbar}}
+
+        <a href="/admin/mappings/new" class="btn btn-default"> Add New Mapping </a>
+
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th> Type </th>
+              <th> Mapping </th>
+              <th> </th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#mappings}}
+              <tr>
+                <td><a href="/admin/mappings/{{id}}"><div name="cell">{{type}}</div></a></td>
+                <td><a href="/admin/mappings/{{id}}"><div name="cell">{{mapping}}</div></a></td>
+                <td><a href="/admin/mappings/{{id}}" class="btn btn-warning btn-sm"><div name="cell"> Edit </div></a></td>
+                <td>
+                  <form action="/admin/mappings/{{id}}?_method=delete" method="post">
+                    <button type="submit" class="btn btn-danger btn-sm"> Delete </button>
+                  </form>
+                </td>
+              </tr>
+            {{/mappings}}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </body>
+</html>
