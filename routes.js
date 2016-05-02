@@ -28,6 +28,8 @@ module.exports = function(router){
   require("./controller/admin.js")(router);
   // Route: "/admin/users"
   require("./controller/users.js")(router);
+  // Route: "/admin/mappings"
+  require("./controller/mappings.js")(router);
 
 
   return router;

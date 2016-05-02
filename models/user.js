@@ -11,6 +11,12 @@ var User = function(sequelize, DataTypes){
           return true;
         else
           return null;
+      },
+      isGuest: function(){
+        if(this.permission == "guest")
+          return true;
+        else
+          return null;
       }
     }
   });

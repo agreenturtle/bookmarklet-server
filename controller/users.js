@@ -42,7 +42,6 @@ module.exports = function(router){
     })
 
     .put(function(req,res){
-      console.log("ID: ", req.params.id);
       models.Users.update({
         password: req.body.password,
         permission: req.body.permission
