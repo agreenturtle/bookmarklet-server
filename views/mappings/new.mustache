@@ -13,22 +13,15 @@
 
         <form class="form col-sm-12" action="/admin/mappings/" method="post">
           <div class="form-group">
-            <label> Type </label>
+            <label> Code for Application </label>
             <select class="form-control" name="type">
-              <option value="Name"> Name </option>
-              <option value="Price"> Price </option>
-              <option value="Image"> Image </option>
-              <option value="Sku"> Sku </option>
-              <option value="Category"> Category </option>
-              <option value="Brand"> Brand </option>
-              <option value="Cart Value"> Cart Value </option>
-              <option value="Cart Quantity"> Cart Quantity </option>
-              <option value="Cart Sku"> Cart SKU </option>
+              <option value="wsb-code"> Web Scraping Bookmarklet </option>
             </select>
           </div>
           <div class="form-group">
             <label> Mapping </label>
-            <input class="form-control" name="mapping" value="{{#mapping_data}}{{mapping}}{{/mapping_data}}"/>
+            <textarea class="form-control" name="mapping" id="code" style="margin: 0px -1.99653px 0px 0px; width: 100%; height: 391px;"></textarea>
+            <!-- <input class="form-control" name="mapping" value="{{#mapping_data}}{{mapping}}{{/mapping_data}}"/> -->
           </div>
           <div class="form-group">
             <button class="btn btn-primary" type="submit"> Add New Mapping </button>
@@ -38,5 +31,17 @@
 
       </div>
     </div>
+
+    <script>
+      document.querySelector("#code").addEventListener("keydown", function(e){
+        var TABKEY = 9;
+        if(e.which == 9){
+          this.value += "    ";
+          e.preventDefault()
+        }
+      });
+      var text = '{{#mapping_data}}{{mapping}}{{/mapping_data}}'.replace(/%0A/g,"\r\n").replace(/&amp;/g, "&").replace(/&gt/g, ">;").replace(/&lt/g, "<;").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'");
+      document.querySelector("#code").value=text;
+    </script>
   </body>
 </html>

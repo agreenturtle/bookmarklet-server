@@ -18,7 +18,7 @@
             {{#mappings}}
               <tr>
                 <td> {{type}} </td>
-                <td> {{mapping}} </td>
+                <td id="code"> {{mapping}} </td>
               </tr>
             {{/mappings}}
           </tbody>
@@ -26,5 +26,10 @@
 
       </div>
     </div>
+
+    var aA=document.querySelectorAll("#code");
+    for(var i=0;i<aA.length;i++){
+      aA[i].textContent = aA[i].textContent.replace(/%0A/g,"\r\n").replace(/&amp;/g, "&").replace(/&gt/g, ">;").replace(/&lt/g, "<;").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'");
+    }
   </body>
 </html>

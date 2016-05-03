@@ -7,13 +7,13 @@
       <div class="container">
         {{>templates/navbar}}
 
-        <a href="/admin/mappings/new" class="btn btn-default"> Add New Mapping </a>
+        <a href="/admin/mappings/new" class="btn btn-default"> Add New Application Code </a>
 
         <table class="table table-hover table-striped">
           <thead>
             <tr>
-              <th> Type </th>
-              <th> Mapping </th>
+              <th> Application </th>
+              <th> Code </th>
               <th> </th>
               <th> </th>
             </tr>
@@ -22,7 +22,7 @@
             {{#mappings}}
               <tr>
                 <td><a href="/admin/mappings/{{id}}"><div name="cell">{{type}}</div></a></td>
-                <td><a href="/admin/mappings/{{id}}"><div name="cell">{{mapping}}</div></a></td>
+                <td><a href="/admin/mappings/{{id}}"><div name="cell" id="code">{{mapping}}</div></a></td>
                 <td><a href="/admin/mappings/{{id}}" class="btn btn-warning btn-sm"><div name="cell"> Edit </div></a></td>
                 <td>
                   <form action="/admin/mappings/{{id}}?_method=delete" method="post">
@@ -36,5 +36,11 @@
 
       </div>
     </div>
+    <script>
+      var aA=document.querySelectorAll("#code");
+      for(var i=0;i<aA.length;i++){
+        aA[i].textContent = aA[i].textContent.replace(/%0A/g,"\r\n").replace(/&amp;/g, "&").replace(/&gt/g, ">;").replace(/&lt/g, "<;").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'");
+      }
+    </script>
   </body>
 </html>
