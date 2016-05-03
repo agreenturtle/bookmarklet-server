@@ -2,6 +2,8 @@ Bookmarklet app that calls a server for the bookmarklet code.
 
 To Use the bookmarklet:
 1. Take the file in "/public/js/bookmarklet.js" and place that into your browser bookmark.
+2. Go to a page and open the bookmarklet. Please note, on the initial load it may take a few seconds if the server wasn't started previously.
+
 
 To access the server:
 1. Go to https://web-scrapping-bookmarklet-7000.herokuapp.com/ and login. Guest Username/Password: guest/guest.*
