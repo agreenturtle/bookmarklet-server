@@ -32,7 +32,7 @@ class Controller{
     for(let i=0;i < aA.length; i++){
       aA[i].addEventListener("click", (e) => {
         this.overlay.turn_buttons_off();
-        e.target.style = this.overlay.BUTTON_ON_STYLE;
+        e.target.className = "wsb-btn-on";
         this.mappings.active_mapping = e.target.id;
         if(this.mappings.active_mapping != "Traffic Cop")
           document.querySelector("#wsb_overlay").hidden=true;
