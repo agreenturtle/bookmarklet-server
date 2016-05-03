@@ -11,6 +11,7 @@ module.exports = function(router){
   router.route("/admin/mappings")
     .get(function(req,res) {
       models.Mappings.findAll().then(function(mappings){
+        console.log(mappings);
         res.render("mappings/index", {user:req.user, mappings:mappings});
       });
     })
