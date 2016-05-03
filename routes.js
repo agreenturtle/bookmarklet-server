@@ -9,9 +9,13 @@ module.exports = function(router){
     if(req.url != "/"){
       models.Users.findById(req.session.user_id).then(function(user){
         if(user){
-          console.log("assign user to req.user");
-          req.user = user;
-          next();
+          if(req.url.indexOf("/admin")>-1 && user.permission != "Admin"){
+            res.render("index/401");
+          }
+          else{
+            req.user = user;
+            next();
+          }
         }
         else
           res.render("index/401");
@@ -30,6 +34,8 @@ module.exports = function(router){
   require("./controller/users.js")(router);
   // Route: "/admin/mappings"
   require("./controller/mappings.js")(router);
+  // Route: "/admin/guests"
+  require("./controller/guest.js")(router);
 
 
   return router;

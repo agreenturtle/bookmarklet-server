@@ -1,0 +1,30 @@
+<html>
+  <head>
+    {{>templates/header}}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        {{>templates/navbar}}
+
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th> Username </th>
+              <th> Permission </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#all_users}}
+              <tr>
+                <td> {{username}} </td>
+                <td> {{permission}} </td>
+              </tr>
+            {{/all_users}}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </body>
+</html>

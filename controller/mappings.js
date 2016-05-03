@@ -1,5 +1,5 @@
 // controller/mappings.js
-// ROUTE = "/admin/mappings"
+// ROUTE = "/admin/mappings" & "/guest/mappings"
 // =====================================================================
 var models = require("../models");
 
@@ -58,5 +58,12 @@ module.exports = function(router){
           res.redirect("/admin/mappings");
         });
       })
+    })
+
+  router.route("/guest/mappings")
+    .get(function(req,res) {
+      models.Mappings.findAll().then(function(mappings){
+        res.render("guest/mappings/index", {user:req.user, mappings:mappings});
+      });
     })
 }

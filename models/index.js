@@ -5,7 +5,6 @@ var db = {};
 
 // DB CONNECTIONS
 // ===========================================================================
-console.log("DB: ", process.env.BOOKMARKLET_DB,",Username: ", process.env.BOOKMARKLET_DB_USERNAME,",Password: ", process.env.BOOKMARKLET_DB_PASSWORD, ",Host: ",process.env.BOOKMARKLET_HOST)
 var bookmarkletDB = new Sequelize(process.env.BOOKMARKLET_DB, process.env.BOOKMARKLET_DB_USERNAME, process.env.BOOKMARKLET_DB_PASSWORD, {
   dialect: "mysql",
   host: process.env.BOOKMARKLET_HOST,
@@ -20,18 +19,25 @@ var bookmarkletDB = new Sequelize(process.env.BOOKMARKLET_DB, process.env.BOOKMA
 var Mapping = bookmarkletDB.import(__dirname + "/mapping");
 var User = bookmarkletDB.import(__dirname + "/user");
 
-Mapping.sync({force: true}).then(function () {
+Mapping.sync({force: false}).then(function () {
   // Table created
   return;
 });
 
-User.sync({force: true}).then(function () {
+User.sync({force: false}).then(function () {
   // Table created
-  return User.create({
-    username: 'admin',
-    password: 'letmein',
-    permission: 'Admin'
-  });
+  User.findOne({where:{username:"admin"}}).then(function(user){
+    if(!user){
+      return User.create({
+        username: 'admin',
+        password: 'letmein',
+        permission: 'Admin'
+      });
+    }
+    else {
+      return;
+    }
+  })
 });
 
 db["Mappings"] = Mapping;

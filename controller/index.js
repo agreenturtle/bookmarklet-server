@@ -20,7 +20,10 @@ module.exports = function(router){
       models.Users.findOne( {where:{username: req.body.username} }).then(function(user){
         if( user && user.password == req.body.password){
           req.session.user_id = user.id;
-          res.redirect("/admin");
+          if(user.permission == "Admin")
+            res.redirect("/admin");
+          else
+            res.redirect("/guest");
         }
         else {
           res.render("index/401");

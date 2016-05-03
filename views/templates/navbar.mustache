@@ -8,23 +8,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/admin"> Bookmarklet Admin </a>
+      <a class="navbar-brand" href="/{{#user}}admin{{/user}}"> Bookmarklet Admin </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         {{#user}}
           {{#isAdmin}}
-            <li><a href="/admin/users" class="dropdown-toggle"> User </a></li>
-            <li><a href="/admin/mappings" class="dropdown-toggle"> Mapping </a></li>
+          <li><a href="/admin/users" class="dropdown-toggle"> User </a></li>
+          <li><a href="/admin/mappings" class="dropdown-toggle"> Mapping </a></li>
           {{/isAdmin}}
+        {{/user}}
+        {{#user}}
+          {{#isGuest}}
+          <li><a href="/guest/users" class="dropdown-toggle"> User </a></li>
+          <li><a href="/guest/mappings" class="dropdown-toggle"> Mapping </a></li>
+          {{/isGuest}}
         {{/user}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{#user}}
-          {{#isAdmin}}
-            <li><a href="/?action=logout"> Sign Out </a></li>
-          {{/isAdmin}}
+          <li><a href="/?action=logout"> Sign Out </a></li>
         {{/user}}
       </ul>
     </div>

@@ -1,5 +1,5 @@
 // controller/users.js
-// ROUTE = "/admin/users"
+// ROUTE = "/admin/users" & "/guest/users"
 // =====================================================================
 var models = require("../models");
 
@@ -62,5 +62,10 @@ module.exports = function(router){
       })
     })
 
-
+  router.route("/guest/users")
+    .get(function(req,res) {
+      models.Users.findAll().then(function(users){
+        res.render("guest/users/index", {user:req.user, all_users:users});
+      });
+    })
 }

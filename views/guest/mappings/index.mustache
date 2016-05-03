@@ -1,0 +1,30 @@
+<html>
+  <head>
+    {{>templates/header}}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        {{>templates/navbar}}
+
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th> Type </th>
+              <th> Mapping </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#mappings}}
+              <tr>
+                <td> {{type}} </td>
+                <td> {{mapping}} </td>
+              </tr>
+            {{/mappings}}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </body>
+</html>
