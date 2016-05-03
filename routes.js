@@ -5,8 +5,7 @@ var models = require("./models");
 module.exports = function(router){
   // middleware to use for all requests
   router.use(function(req, res, next) {
-    console.log(req.url);
-    if(req.url != "/"){
+    if(req.url != "/" && req.url != "/api.json"){
       models.Users.findById(req.session.user_id).then(function(user){
         if(user){
           if(req.url.indexOf("/admin")>-1 && user.permission != "Admin"){
@@ -36,7 +35,8 @@ module.exports = function(router){
   require("./controller/mappings.js")(router);
   // Route: "/admin/guests"
   require("./controller/guest.js")(router);
-
+  // Route: /api.json"
+  require("./controller/api.js")(router);
 
   return router;
 }
