@@ -1,0 +1,9 @@
+Bookmarklet app that calls a server for the bookmarklet code.
+
+To Use the bookmarklet:
+1. Take the file in "/public/js/bookmarklet.js" and place that into your browser bookmark.
+
+To access the server:
+1. Go to https://web-scrapping-bookmarklet-7000.herokuapp.com/ and login. Guest Username/Password: guest/guest.*
+
+* Please note that guest users have read only access. Only Admin users have access to modify the database. If you need access to the admin section, please notify me.
