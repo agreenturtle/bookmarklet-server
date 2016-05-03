@@ -16,10 +16,12 @@
           </thead>
           <tbody>
             {{#all_users}}
-              <tr>
-                <td> {{username}} </td>
-                <td> {{permission}} </td>
-              </tr>
+              {{#isGuest}}
+                <tr>
+                  <td> {{username}} </td>
+                  <td> {{permission}} </td>
+                </tr>
+              {{/isGuest}}
             {{/all_users}}
           </tbody>
         </table>

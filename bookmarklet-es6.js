@@ -129,7 +129,7 @@ class Overlay {
       ".wsb-btn-off":"background-color:#EEEEEE!important; border : 2px outset buttonface!important; padding: 2px 6px 3px!important; font-family:Arial, Helvetica Neue, Helvetica, sans-serif;!important; font-size: 15px!important; color: black!important;font-weight: normal!important;text-transform: none!important;letter-spacing: 0px!important; border-radius:0px!important",
       ".wsb-btn-on":"background-color:#AAAAAA!important; border: 2px outset buttonface!important; padding: 2px 6px 3px!important; font-family:Arial, Helvetica Neue, Helvetica, sans-serif;!important; font-size: 15px!important; color: black!important;font-weight: normal!important;text-transform: none!important;letter-spacing: 0px!important; border-radius:0px!important",
       ".wsb-textbox":"position:absolute; top:65px; left: 140px; height:100px; width:80%; border: 2px solid #b2b1ad; padding:10px; background: rgba(0,0,0,1); font-family:Arial, Helvetica Neue, Helvetica, sans-serif;!important; font-size: 15px!important; color: lime!important;font-weight: normal!important;text-transform: none!important;letter-spacing: 0px!important;",
-      ".wsb-frame":"border-top: 1px solid #000000; background-color: rgba(178,35,39,0.9); position: fixed; bottom: 0px; left: 0px; height:200px; width:100%; z-index: 2147483647",
+      ".wsb-frame":"border-top: 1px solid #000000; background-color: rgba(0,100,0,0.9); position: fixed; bottom: 0px; left: 0px; height:200px; width:100%; z-index: 2147483647",
       ".wsb-img":"position: absolute; top: 50px; left: 12px; max-height:86px; width:105px; height: auto; width: auto",
       ".wsb-img-div":"position: absolute; border-right: 1px solid #000000; top: 0px; left: 0px; height: 200px; width: 102px; background-color: rgba(238, 238, 238, 1.0)",
       ".wsb_hover_highlight":"background-color: #bcd5eb !important;outline: 2px solid #5166bb !important;"
@@ -316,7 +316,7 @@ class Mapping{
     else{
       mapping = this.search_for_image_element(e);
       if(!mapping){
-        mapping = 'var img2=document.querySelector("' + this.css_path(e.target) + '").src; img2;';
+        mapping = 'Error: Unable to calculate mapping';
       }
     }
 
