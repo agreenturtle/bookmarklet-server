@@ -7,8 +7,7 @@ var path = require('path');
 module.exports = function(router){
   router.get("/api.json", function(req,res){
     models.Mappings.findAll().then(function(mappings){
-      res.sendFile(path.resolve('public/html/bookmarklet.html'));
-
+      res.sendFile(path.resolve('public/js/wsb-code.js'));
     });
   });
 }
