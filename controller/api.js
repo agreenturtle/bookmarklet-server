@@ -7,13 +7,13 @@ var path = require('path');
 module.exports = function(router){
   router.get("/api/wsb.json", function(req,res){
     models.Mappings.findAll().then(function(mappings){
-      res.sendFile(path.resolve('public/js/wsb-code.js'));
+      res.sendFile(path.resolve('public/api/wsb-code.js'));
     });
   });
 
   router.get("/api/sh-bookmarklet.json", function(req,res){
     models.Mappings.findAll().then(function(mappings){
-      res.sendFile(path.resolve('public/js/sh-bookmarklet.js'));
+      res.sendFile(path.resolve('public/api/sh-bookmarklet.js'));
     });
   });
 }
