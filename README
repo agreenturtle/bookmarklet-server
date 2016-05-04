@@ -9,3 +9,10 @@ To access the server:
 1. Go to https://web-scrapping-bookmarklet-7000.herokuapp.com/ and login. Guest Username/Password: guest/guest.*
 
 * Please note that guest users have read only access. Only Admin users have access to modify the database. If you need access to the admin section, please notify me.
+
+Environment Variables:
+BOOKMARKLET_DB
+BOOKMARKLET_DB_USERNAME
+BOOKMARKLET_DB_PASSWORD
+BOOKMARKLET_HOST
+ADMIN_PASSWORD

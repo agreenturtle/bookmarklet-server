@@ -30,7 +30,7 @@ User.sync({force: false}).then(function () {
     if(!user){
       return User.create({
         username: 'admin',
-        password: 'letmein',
+        password: process.env.ADMIN_PASSWORD,
         permission: 'Admin'
       });
     }
