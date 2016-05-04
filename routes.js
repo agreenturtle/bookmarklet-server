@@ -5,7 +5,7 @@ var models = require("./models");
 module.exports = function(router){
   // middleware to use for all requests
   router.use(function(req, res, next) {
-    if(req.url != "/" && req.url != "/api.json"){
+    if(req.url != "/" && req.url.indexOf("/api") == -1){
       models.Users.findById(req.session.user_id).then(function(user){
         if(user){
           if(req.url.indexOf("/admin")>-1 && user.permission != "Admin"){
