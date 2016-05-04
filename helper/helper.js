@@ -4,7 +4,8 @@ var path = require("path");
 function helperFunction(){
   this.dict = {
     //application:path
-    "wsb-code":path.resolve('public/js/wsb-code.js')
+    "wsb-code":path.resolve('public/js/wsb-code.js'),
+    "sh-bookmarklet":path.resolve('public/js/sh-bookmarklet.js')
   }
 }
 
