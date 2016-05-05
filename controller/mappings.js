@@ -17,7 +17,7 @@ module.exports = function(router){
 
     .post(function(req,res) {
       var mapping = req.body.mapping.replace(/(?:\r\n|\r|\n)/g,"%0A");
-      helper.writeCodeToFile(req.body.type, req.body.mapping.replace(/&amp;/g, "&").replace(/&gt/g, ">;").replace(/&lt/g, "<;").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'"));
+      helper.writeCodeToFile(req.body.type, req.body.mapping.replace(/&amp;/g, "&").replace(/&gt/g, ">").replace(/&lt/g, "<").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'"));
       var new_mapping = models.Mappings.build({
         type: req.body.type,
         mapping: mapping
