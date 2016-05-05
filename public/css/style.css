@@ -19,6 +19,7 @@
   float: right;
   height: 100%;
   margin-top: 51px;
+  overflow:scroll;
   padding-top: 50px;
   text-align: center;
   width:20%;
