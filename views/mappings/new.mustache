@@ -14,10 +14,13 @@
         <form class="form col-sm-12" action="/admin/mappings/" method="post">
           <div class="form-group">
             <label> Code for Application </label>
+            <input class="form-control" name="type" value="{{#mapping_data}}{{type}}{{/mapping_data}}"/>
+            <!--
             <select class="form-control" name="type">
               <option value="wsb-code"> Web Scraping Bookmarklet </option>
               <option value="sh-bookmarklet"> SH Bookmarklet </option>
             </select>
+          -->
           </div>
           <div class="form-group">
             <label> Mapping </label>
