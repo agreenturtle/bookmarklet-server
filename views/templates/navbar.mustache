@@ -15,14 +15,14 @@
       <ul class="nav navbar-nav">
         {{#user}}
           {{#isAdmin}}
-          <li><a href="/admin/users" class="dropdown-toggle"> User </a></li>
-          <li><a href="/admin/mappings" class="dropdown-toggle"> Mapping </a></li>
+          <li><a href="/admin/users" class="dropdown-toggle"> Users </a></li>
+          <li><a href="/admin/apps" class="dropdown-toggle"> Apps </a></li>
           {{/isAdmin}}
         {{/user}}
         {{#user}}
           {{#isGuest}}
-          <li><a href="/guest/users" class="dropdown-toggle"> User </a></li>
-          <li><a href="/guest/mappings" class="dropdown-toggle"> Mapping </a></li>
+          <li><a href="/guest/users" class="dropdown-toggle"> Users </a></li>
+          <li><a href="/guest/apps" class="dropdown-toggle"> Apps </a></li>
           {{/isGuest}}
         {{/user}}
       </ul>

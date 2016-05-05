@@ -16,10 +16,10 @@ var bookmarkletDB = new Sequelize(process.env.BOOKMARKLET_DB, process.env.BOOKMA
   }
 });
 
-var Mapping = bookmarkletDB.import(__dirname + "/mapping");
+var App = bookmarkletDB.import(__dirname + "/app");
 var User = bookmarkletDB.import(__dirname + "/user");
 
-Mapping.sync({force: false}).then(function () {
+App.sync({force: false}).then(function () {
   // Table created
   return;
 });
@@ -40,7 +40,7 @@ User.sync({force: false}).then(function () {
   })
 });
 
-db["Mappings"] = Mapping;
+db["Apps"] = App;
 db["Users"] = User;
 // ===========================================================================
 

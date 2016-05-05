@@ -11,9 +11,6 @@ function helperFunction(){
 
 helperFunction.prototype.writeCodeToFile = function(app_name, code){
   var file_name = path.resolve('public/code-files/' + app_name + '.js');
-  console.log("*****************************");
-  console.log(file_name);
-  console.log("*****************************");
   fs.writeFile(file_name, code, function(err){
     if(err){
       return console.log(err);

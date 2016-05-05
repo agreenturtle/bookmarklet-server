@@ -7,7 +7,7 @@
       <div class="container">
         {{>templates/navbar}}
 
-        <a href="/admin/mappings/new" class="btn btn-default"> Add New Application Code </a>
+        <a href="/admin/apps/new" class="btn btn-default"> Add New Application Code </a>
 
         <table class="table table-hover table-striped">
           <thead>
@@ -18,17 +18,17 @@
             </tr>
           </thead>
           <tbody>
-            {{#mappings}}
+            {{#app_data}}
               <tr>
-                <td><a href="/admin/mappings/{{id}}"><div name="cell">{{type}}</div></a></td>
-                <td><a href="/admin/mappings/{{id}}" class="btn btn-warning btn-sm"><div name="cell"> Edit </div></a></td>
+                <td><a href="/admin/apps/{{id}}"><div name="cell">{{app_name}}</div></a></td>
+                <td><a href="/admin/apps/{{id}}" class="btn btn-warning btn-sm"><div name="cell"> Edit </div></a></td>
                 <td>
-                  <form action="/admin/mappings/{{id}}?_method=delete" method="post">
+                  <form action="/admin/apps/{{id}}?_method=delete" method="post">
                     <button type="submit" class="btn btn-danger btn-sm"> Delete </button>
                   </form>
                 </td>
               </tr>
-            {{/mappings}}
+            {{/app_data}}
           </tbody>
         </table>
 

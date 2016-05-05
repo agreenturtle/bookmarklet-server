@@ -31,8 +31,8 @@ module.exports = function(router){
   require("./controller/admin.js")(router);
   // Route: "/admin/users"
   require("./controller/users.js")(router);
-  // Route: "/admin/mappings"
-  require("./controller/mappings.js")(router);
+  // Route: "/admin/apps"
+  require("./controller/apps.js")(router);
   // Route: "/admin/guests"
   require("./controller/guest.js")(router);
   // Route: /api.json"
