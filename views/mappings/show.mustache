@@ -38,7 +38,7 @@
           e.preventDefault()
         }
       });
-      var text = '{{#mapping_data}}{{mapping}}{{/mapping_data}}'.replace(/%0A/g,"\r\n").replace(/&amp;/g, "&").replace(/&gt/g, ">").replace(/&lt/g, "<").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'");
+      var text = '{{#mapping_data}}{{mapping}}{{/mapping_data}}'.replace(/%0A/g,"\r\n").replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"').replace(/&#x2F;/g,"/").replace(/&#39;/g,"'");
       document.querySelector("#code").value=text;
     </script>
   </body>
