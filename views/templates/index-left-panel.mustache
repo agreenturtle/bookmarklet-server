@@ -1,13 +1,21 @@
 <h3> Welcome to the Bookmarklet Server Admin Section </h3>
 <p>
   The Bookmarklet Server will allow you to add a bookmarklet app and its code. Once the code is added, add the following code to your bookmark:
-
-    var s=document.createElement("script"); s.src="https://bookmarklet-server.herokuapp.com/api/[YOUR APP NAME]"; document.querySelector("body").appendChild(s);
-
+</p>
+<br>
+<pre>
+var s=document.createElement("script"); s.src="https://bookmarklet-server.herokuapp.com/api/[YOUR APP NAME]"; document.querySelector("body").appendChild(s);
+</pre>
+<br>
+<p>
   Replace [YOUR APP NAME] with the app name of your bookmarklet. To add a javascript bookmarklet for most browser, it will need to be in the following format:
-
-    javascript:var s=document.createElement("script"); s.src="https://bookmarklet-server.herokuapp.com/api/[YOUR APP NAME]"; document.querySelector("body").appendChild(s);
-
+</p>
+<br>
+<pre>
+javascript:var s=document.createElement("script"); s.src="https://bookmarklet-server.herokuapp.com/api/[YOUR APP NAME]"; document.querySelector("body").appendChild(s);
+</pre>
+<br>
+<p>
   Please check with browser settings to cofirm that this is the correct format to add a javascript bookmark.
 </p>
 <ul>

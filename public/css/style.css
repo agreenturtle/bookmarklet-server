@@ -7,7 +7,9 @@
   float: left;
   height: 100%;
   margin-top:51px;
+  overflow:scroll;
   padding-left: 32px;
+  padding-right: 32px;
   padding-top: 30px;
   width:80%;
 }
