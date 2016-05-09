@@ -62,6 +62,7 @@ module.exports = function(router){
 
     .delete(function(req,res){
       models.Apps.findById(req.params.id).then(function(app_data){
+        helper.removeFile(app_data.app_name);
         app_data.destroy().then(function(){
           res.redirect("/admin/apps");
         });

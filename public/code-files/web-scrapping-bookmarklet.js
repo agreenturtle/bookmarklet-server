@@ -1,6 +1,6 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i <;;;; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -43,8 +43,8 @@ var Controller = function () {
     value: function button_click() {
       var _this2 = this;
 
-      var aA = document.querySelectorAll("#wsb_overlay >;;;; div >;;;; div >;;;; button");
-      for (var i = 0; i <;;;; aA.length; i++) {
+      var aA = document.querySelectorAll("#wsb_overlay > div > div > button");
+      for (var i = 0; i < aA.length; i++) {
         aA[i].addEventListener("click", function (e) {
           _this2.overlay.turn_buttons_off();
           e.target.className = "wsb-btn-on";
@@ -181,7 +181,7 @@ var Overlay = function () {
       container.appendChild(image_div);
 
       var image = document.createElement("img");
-      image.src = "http://vignette1.wikia.nocookie.net/b__/images/4/4d/Tribal_Turtle_Icon.png/revision/latest?cb=20130119070150&path-prefix=bloons";
+      image.src = "http://vignette1.wikia.nocookie.net/farmville/images/d/df/Baby_Turtle-icon.png/revision/latest";
       image.className = "wsb-img";
       container.appendChild(image);
 
@@ -189,7 +189,7 @@ var Overlay = function () {
       div.className = "wsb-btn-div";
       container.appendChild(div);
 
-      for (var i = 0; i <;;;; this.buttons.length; i++) {
+      for (var i = 0; i < this.buttons.length; i++) {
         this.create_multiple_buttons(this.buttons[i]);
       }
 
@@ -228,15 +228,15 @@ var Overlay = function () {
   }, {
     key: "append_multiple_buttons",
     value: function append_multiple_buttons(p, c) {
-      for (var i = 0; i <;;;; c.length; i++) {
+      for (var i = 0; i < c.length; i++) {
         p.appendChild(c[i]);
       }
     }
   }, {
     key: "turn_buttons_off",
     value: function turn_buttons_off() {
-      var aA = document.querySelectorAll("#wsb_overlay >;;;; div >;;;; div >;;;; button");
-      for (var i = 0; i <;;;; aA.length; i++) {
+      var aA = document.querySelectorAll("#wsb_overlay > div > div > button");
+      for (var i = 0; i < aA.length; i++) {
         aA[i].className = "wsb-btn-off";
       }
     }
@@ -277,21 +277,21 @@ var Mapping = function () {
       if (filter) {
         path = this.filter_path_for_category(path);
       }
-      return path.join(" >;;;; ");
+      return path.join(" > ");
     }
   }, {
     key: "filter_path_for_category",
     value: function filter_path_for_category(path) {
       var index = -1;
-      for (var i = 0; i <;;;; path.length; i++) {
-        if (path[i].indexOf("tr") >;;;; -1) index = i;
+      for (var i = 0; i < path.length; i++) {
+        if (path[i].indexOf("tr") > -1) index = i;
       }
       if (index != -1) {
         path[index] = path[index].split(":")[0];
       } else {
         index = -1;
-        for (var _i = 0; _i <;;;; path.length; _i++) {
-          if (path[_i].indexOf("li") >;;;; -1) index = _i;
+        for (var _i = 0; _i < path.length; _i++) {
+          if (path[_i].indexOf("li") > -1) index = _i;
         }
         if (index != -1) {
           path[index] = path[index].split(":")[0];
@@ -313,10 +313,7 @@ var Mapping = function () {
       } catch (e) {
         mapping_output = "Error: Invalid Mapping";
       };
-      output_el.innerHTML = "* Mapping output: >;;;;>;;;;" + mapping_output + "<;;;;<;;;;
-
-* Mappping code: 
-" + m;
+      output_el.innerHTML = "* Mapping output: >>" + mapping_output + "<<* Mappping code: " + m;
     }
   }, {
     key: "product_name",
@@ -334,11 +331,11 @@ var Mapping = function () {
     key: "output_price_mapping",
     value: function output_price_mapping() {
       var selectors = "";
-      for (var i = 0; i <;;;; this.price_selectors.length; i++) {
+      for (var i = 0; i < this.price_selectors.length; i++) {
         selectors += ',"' + this.price_selectors[i] + '"';
       }
       selectors = selectors.substring(1, selectors.length);
-      var mapping = 'var price=null; var selectors=[' + selectors + ']; for(var i=0;i<;;;;selectors.length;i++){if(document.querySelector(selectors[i])){var cprice=/[0-9.,]+/.exec(document.querySelector(selectors[i]).textContent)[0].replace(/[,]/g,""); if(!price || parseFloat(price) >;;;; parseFloat(cprice)){price=cprice}}} price;';
+      var mapping = 'var price=null; var selectors=[' + selectors + ']; for(var i=0;i<selectors.length;i++){if(document.querySelector(selectors[i])){var cprice=/[0-9.,]+/.exec(document.querySelector(selectors[i]).textContent)[0].replace(/[,]/g,""); if(!price || parseFloat(price) > parseFloat(cprice)){price=cprice}}} price;';
       this.output(mapping);
       this.price_selectors = [];
     }
@@ -367,7 +364,7 @@ var Mapping = function () {
       var parent = e.target.parentNode;
       var siblings = parent.children;
       var mapping = void 0;
-      for (var i = 0; i <;;;; siblings.length; i++) {
+      for (var i = 0; i < siblings.length; i++) {
         if (siblings[i].tagName == "IMG") {
           mapping = 'var img=document.querySelector("' + this.css_path(siblings[i]) + '").src; img;';
           break;
@@ -384,13 +381,13 @@ var Mapping = function () {
   }, {
     key: "product_sku",
     value: function product_sku(e) {
-      var mapping = 'var sku=document.querySelector("' + this.css_path(e.target) + '").textContent.replace("#",""); var sku_filter=["Sku","SKU","Model#","Model #","Model","Item #","Item#","Item No.","Item No","Item","Style #","Style No.","Style No","Style"]; for(var i=0;i<;;;;sku_filter.length;i++){sku=sku.replace(sku_filter[i],"").trim()} if(sku.indexOf(":")>;;;;-1){sku=sku.split(":")[1]} sku;';
+      var mapping = 'var sku=document.querySelector("' + this.css_path(e.target) + '").textContent.replace("#",""); var sku_filter=["Sku","SKU","Model#","Model #","Model","Item #","Item#","Item No.","Item No","Item","Style #","Style No.","Style No","Style"]; for(var i=0;i<sku_filter.length;i++){sku=sku.replace(sku_filter[i],"").trim()} if(sku.indexOf(":")>-1){sku=sku.split(":")[1]} sku;';
       this.output(mapping, e);
     }
   }, {
     key: "product_category",
     value: function product_category(e) {
-      var mapping = 'var cat=""; var aA=document.querySelectorAll("' + this.css_path(e.target, true) + '"); for(var i=0;i<;;;;aA.length;i++){cat+=","+aA[i].textContent.trim();} cat.substring(1,cat.length);';
+      var mapping = 'var cat=""; var aA=document.querySelectorAll("' + this.css_path(e.target, true) + '"); for(var i=0;i<aA.length;i++){cat+=","+aA[i].textContent.trim();} cat.substring(1,cat.length);';
       this.output(mapping, e);
     }
   }, {
@@ -414,7 +411,7 @@ var Mapping = function () {
   }, {
     key: "cart_sku",
     value: function cart_sku(e) {
-      var mapping = 'var c_sku=""; var aA=document.querySelectorAll("' + this.css_path(e.target, true) + '"); for(var i=0;i<;;;;aA.length;i++){c_sku+=","+aA[i].textContent.replace(":","").trim();} c_sku=c_sku.substring(1,c_sku.length); var sku_filter=["Sku","SKU","Model#","Model #","Model","Item #","Item#","Item No.","Item No","Item","Style #","Style No.","Style No","Style"]; for(var i=0;i<;;;;sku_filter.length;i++){var find=sku_filter[i]+" "; var regex=new RegExp(find,"g");c_sku=c_sku.replace(regex,""); find=sku_filter[i]; regex=new RegExp(find,"g"); c_sku=c_sku.replace(regex,"").trim()} c_sku;';
+      var mapping = 'var c_sku=""; var aA=document.querySelectorAll("' + this.css_path(e.target, true) + '"); for(var i=0;i<aA.length;i++){c_sku+=","+aA[i].textContent.replace(":","").trim();} c_sku=c_sku.substring(1,c_sku.length); var sku_filter=["Sku","SKU","Model#","Model #","Model","Item #","Item#","Item No.","Item No","Item","Style #","Style No.","Style No","Style"]; for(var i=0;i<sku_filter.length;i++){var find=sku_filter[i]+" "; var regex=new RegExp(find,"g");c_sku=c_sku.replace(regex,""); find=sku_filter[i]; regex=new RegExp(find,"g"); c_sku=c_sku.replace(regex,"").trim()} c_sku;';
       this.output(mapping, e);
     }
   }]);
